@@ -1,7 +1,3 @@
-//user input on how they feel
-const prompt = require('prompt-sync')();
-let feeling = prompt('Choose how are you feeling? sad, angry, lost: ').toLowerCase();
-
 //Object for quran verses in english
 const englishVerses = {
     sad: ["Allah does not burden a soul beyond that it can bear", "Do not lose hope, nor be sad. You will surely be victorious if you are true believers", "O you who have believed, seek help through patience and prayer. Indeed, Allah is with the patient"],
@@ -17,12 +13,18 @@ const arabicVerses = {
 
 //function for getting a random idx
 function getRandomIdx (verses) {
-    return Math.round(Math.random() * verses.length);
+    return Math.round(Math.random() * verses.length - 1);
 }
 
 //function for getting a random verse
 function printRandomVerse () {
     let idx = getRandomIdx(englishVerses[feeling]);
-    console.log(englishVerses[feeling][idx]);
+    console.log('\n' + englishVerses[feeling][idx]);
     console.log(arabicVerses[feeling][idx]);
 }
+
+//user input on how they feel
+const prompt = require('prompt-sync')();
+let feeling = prompt('Choose how are you feeling? sad, angry, lost: ').toLowerCase();
+
+printRandomVerse();
