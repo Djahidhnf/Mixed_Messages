@@ -15,3 +15,14 @@ const arabicVerses = {
     lost: ["وَمَنْ يَتَوَكَّلْ عَلَى اللَّهِ فَهُوَ حَسْبُهُ"]
 }
 
+//function for getting a random idx
+function getRandomIdx (verses) {
+    return Math.round(Math.random() * verses.length);
+}
+
+//function for getting a random verse
+function printRandomVerse () {
+    let idx = getRandomIdx(englishVerses[feeling]);
+    console.log(englishVerses[feeling][idx]);
+    console.log(arabicVerses[feeling][idx]);
+}
