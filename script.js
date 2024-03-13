@@ -1,6 +1,6 @@
 //user input on how they feel
 const prompt = require('prompt-sync')();
-let feeling = prompt('Choose how are you feeling? sad, angry, lost: ');
+let feeling = prompt('Choose how are you feeling? sad, angry, lost: ').toLowerCase();
 
 //Object for quran verses in english
 const englishVerses = {
